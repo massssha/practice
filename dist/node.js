@@ -8,12 +8,11 @@ const path_1 = __importDefault(require("path"));
 const readline_1 = __importDefault(require("readline"));
 const axios_1 = __importDefault(require("axios"));
 const dotenv_1 = __importDefault(require("dotenv"));
+[];
+[];
+[];
 dotenv_1.default.config();
 const CONFIG_PATH = path_1.default.join(__dirname, '..', '.figma-access-conf');
-[];
-[];
-[];
-// Функции для работы с конфигурацией
 const saveConfig = (token, documentId) => {
     const config = { token, documentId };
     fs_1.default.writeFileSync(CONFIG_PATH, JSON.stringify(config));
@@ -23,7 +22,6 @@ const loadConfig = () => {
         return null;
     return JSON.parse(fs_1.default.readFileSync(CONFIG_PATH, 'utf-8'));
 };
-// Функции для взаимодействия с API Figma
 const API_BASE_URL = 'https://api.figma.com/v1';
 const fetchFigmaData = async (token, documentId) => {
     const headers = {
@@ -105,7 +103,6 @@ const getCredentials = async () => {
     }
     return config;
 };
-// Основная функция
 const main = async () => {
     const { token, documentId } = await getCredentials();
     const configuration = await fetchFigmaData(token, documentId);

@@ -4,17 +4,11 @@ import readline from 'readline';
 import axios from 'axios';
 import dotenv from 'dotenv';
 
-dotenv.config();
-
-const CONFIG_PATH = path.join(__dirname, '..', '.figma-access-conf');
-
-// Типы данных
 interface Variable {
   name: string;
   value: string;
   type: 'color' | 'string' | 'number';
 }[];
-
 
 interface Page {
   id: string;
@@ -50,7 +44,10 @@ type Tree = {
   children?: Tree[];
 }[];
 
-// Функции для работы с конфигурацией
+dotenv.config();
+
+const CONFIG_PATH = path.join(__dirname, '..', '.figma-access-conf');
+
 const saveConfig = (token: string, documentId: string): void => {
   const config = { token, documentId };
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(config));
@@ -61,8 +58,6 @@ const loadConfig = (): { token: string; documentId: string } | null => {
   return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
 };
 
-
-// Функции для взаимодействия с API Figma
 const API_BASE_URL = 'https://api.figma.com/v1';
 
 const fetchFigmaData = async (token: string, documentId: string): Promise<Configuration> => {
@@ -160,8 +155,6 @@ const getCredentials = async (): Promise<{ token: string; documentId: string }> 
   return config;
 };
 
-
-// Основная функция
 const main = async () => {
   const { token, documentId } = await getCredentials();
   const configuration = await fetchFigmaData(token, documentId);
