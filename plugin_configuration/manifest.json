@@ -1,0 +1,14 @@
+{
+  "name": "plugin_configuration",
+  "id": "1390323430124741466",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": [
+    "figma"
+  ],
+ 
+  "ui": { "export": "export.html" },
+  "documentAccess": "dynamic-page"
+}

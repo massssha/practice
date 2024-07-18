@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    label, input { display: block; margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <label for="text">Text for the box:</label>
+  <input type="text" id="text" name="text">
+  
+  <label for="fontSize">Font Size:</label>
+  <input type="number" id="fontSize" name="fontSize" value="16">
+
+  <button id="create">Create</button>
+
+  <script>
+    document.getElementById('create').onclick = () => {
+      const text = document.getElementById('text').value;
+      const fontSize = parseInt(document.getElementById('fontSize').value, 10);
+      parent.postMessage({ pluginMessage: { type: 'create-text-box', text, fontSize } }, '*');
+    };
+  </script>
+</body>
+</html>

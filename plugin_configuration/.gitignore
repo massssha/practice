@@ -1,0 +1,9 @@
+# Node
+*.log
+*.log.*
+npm-debug.log*
+node_modules/
+
+generate_css.js
+configuration.json
+variables.css

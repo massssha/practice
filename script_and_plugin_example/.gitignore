@@ -1,0 +1,10 @@
+# Node
+*.log
+*.log.*
+npm-debug.log*
+node_modules/
+
+out/
+dist/
+.figma-access-conf
+configuration.json
