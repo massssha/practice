@@ -3,9 +3,15 @@
     "target": "es2020",
     "lib": ["es2020"],
     "strict": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
