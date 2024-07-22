@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
 import axios from 'axios';
-import dotenv from 'dotenv';
 
 interface Variable {
   name: string;
@@ -44,7 +43,6 @@ type Tree = {
   children?: Tree[];
 }[];
 
-dotenv.config();
 
 const CONFIG_PATH = path.join(__dirname, '..', '.figma-access-conf');
 

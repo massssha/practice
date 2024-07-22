@@ -40,7 +40,7 @@ function main() {
         return;
       }
 
-      console.log('CSS file generated successfully:', outputFilePath);
+      console.log('CSS file generated successfully');
     });
   });
 }

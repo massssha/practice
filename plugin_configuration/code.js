@@ -87,11 +87,6 @@ figma.showUI(__uiFiles__["export"], {
   themeColors: true,
 });
 
-async function init() {
-  await exportToJSON();
-}
-
-init().catch(console.error);
 
 function rgbToHex({ r, g, b, a }) {
   if (a !== 1) {
